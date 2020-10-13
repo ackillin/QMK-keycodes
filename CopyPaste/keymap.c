@@ -25,18 +25,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
    switch(keycode){
    case UNO:
         if(record->event.pressed) {
-            //MT((MOD_LCTL | KC_I) ,  (KC_DOT));
-            //MT(MOD_LCTL|MOD_LSFT,KC_ESC);
             //when keycode UNO is pressed
-            /*register_code(KC_RCTL);
-            register_code(KC_I);*/
-            if(MT(MOD_LCTL | KC_C , MOD_LCTL | KC_V))
-            SEND_STRING(" ");
+            register_code(KC_RCTL);
+            register_code(KC_I);
         }
         else {
         //when uno is released
-            /*unregister_code(KC_RCTL);
-            unregister_code(KC_I);*/
+            unregister_code(KC_RCTL);
+            unregister_code(KC_I);
             }
         break;
    }
